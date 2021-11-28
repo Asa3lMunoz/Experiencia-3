@@ -1,0 +1,46 @@
+<ion-header class="ion-no-border" >
+  <ion-toolbar background color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button
+      defaultHref="/bienvenida"
+      color="primary"
+      text="Volver"
+      mode="ios"></ion-back-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content background color="dark" class="ion-padding">
+  <br>
+  
+
+  <div id="header">
+    
+    <img src="/assets/registro.png" />
+    
+  </div>
+  
+  <form #formulario="ngForm" (ngSubmit) ="onSubmit()">
+    <!--
+    <ion-list-header>
+
+      <ion-label>Formulario Válido: {{formulario.valid}} </ion-label>
+
+    </ion-list-header>-->
+
+    <ion-item background color="dark">
+      <ion-label position="floating"><b>Usuario</b></ion-label>
+    <ion-input  type="text"  name="nombre" [(ngModel)]= "usuario.nombre" required></ion-input>
+
+    </ion-item>
+    <ion-item background color="dark">
+      <ion-label position="floating" ><b>Contraseña</b></ion-label>
+    <ion-input type="password"  background color="success" name="password" [(ngModel)]= "usuario.password" required></ion-input>
+    </ion-item>
+
+    <ion-button [disabled] ="formulario.invalid"  type="submit" expand="block" routerLink="/inicio" >
+        Iniciar
+    </ion-button>
+  </form>
+</ion-content>

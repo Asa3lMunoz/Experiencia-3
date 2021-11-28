@@ -1,0 +1,104 @@
+<ion-header>
+  <ion-toolbar class="ion-padding">
+    <ion-buttons slot="start">
+      <ion-back-button 
+          defaultHref="/"
+          text="Back"
+          color="primary"
+          mode="ios">
+        </ion-back-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+       <ion-avatar>
+         <ion-img src="assets/cachorro.jpg"></ion-img>
+       </ion-avatar>
+    </ion-buttons>
+
+    <ion-title color="primary">Input</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <h2>Elementos de tipo input</h2>
+
+  <ion-item>
+    <ion-label>Ingrese una palabra: </ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Ingrese otra palabra: </ion-label>
+    <ion-input value="custom"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Ingrese un dato: </ion-label>
+    <ion-input placeholder="Enter Input"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Ingrese otro dato: </ion-label>
+    <ion-input clearInput value="clear me"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Ingrese un número: </ion-label>
+    <ion-input type="number" value="333"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Ingrese una palabra: </ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="fixed">Otra palabra: </ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label position="stacked">Stacked Label</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+
+  <!--inserte un botón que al hacer click redireccione al 
+  page inicio// el texto del botón debe decir: Enviar datos-->
+
+  <ion-button routerLink="/inicio">
+     Enviar Datos
+  </ion-button>
+
+  <form #formulario="ngForm" (ngSubmit) ="onSubmit()">
+
+    <ion-list-header>
+      <ion-label>Formulario Válido: {{formulario.valid}} </ion-label>
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>Email: </ion-label>
+      <ion-input type="email" placeholder="Email"
+                 name="email" [(ngModel)]= "usuario.email"
+                 pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                 required>
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Password: </ion-label>
+      <ion-input type="password" placeholder="Contraseña"
+                 name="password" [(ngModel)]= "usuario.password"
+                 required>
+      </ion-input>
+    </ion-item>
+
+    <ion-button [disabled] ="formulario.invalid"
+              type="submit" expand="block" routerLink="/inicio">
+        Click me
+    </ion-button>
+
+  </form>
+
+
+</ion-content>

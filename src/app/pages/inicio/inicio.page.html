@@ -1,0 +1,71 @@
+<ion-header class="ion-padding" >
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    
+    <ion-buttons slot="end">
+      
+    </ion-buttons>
+    <ion-title  color="primary" class="tittle">DeTodoModa</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true" class="background">
+
+  
+  <ion-list>
+    <ion-item *ngFor="let c of componentes"
+              [routerLink]="c.redirecTo"
+              detail="true">
+      <ion-icon [name]="c.icon" slot="start" color="primary"></ion-icon>          
+      {{c.name}}
+    </ion-item>
+  </ion-list>
+
+  
+  <p class="p">¡Destacados!</p>
+  <ion-slides [options]="option" class="ion-margin-top">
+    
+    
+    <ion-slide>
+      <ion-card>
+        <img src="assets/Buzo1.jpg">
+      </ion-card>
+    </ion-slide>
+    
+    <ion-slide>
+      <ion-card>
+        <img src="assets/Gorro2.jpg">
+      </ion-card>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-card>
+        <img src="assets/Polera1.jpg">
+      </ion-card>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-card>
+        <img src="assets/Zapatilla1.jfif">
+      </ion-card>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-card>
+        <img src="assets/Gorro5.jpg">
+      </ion-card>
+    </ion-slide>
+
+
+  </ion-slides>
+
+
+  
+
+</ion-content>

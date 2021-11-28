@@ -1,0 +1,34 @@
+ion-content {
+      
+    
+    #header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+      h1 {
+        font-weight: 700;
+        font-size: 26px;
+        color: blueviolet;
+        margin-bottom: 15%;
+      }
+  
+      img {
+        width: 150px;
+        height: 150px;
+        border-radius: 125px;
+      }
+    }
+
+
+    .boton{
+        width: 100%;
+    }
+    
+    .text{
+        color: black;
+        text-align: justify;
+        font-size: 100%;
+        font-weight: 100%;
+    }

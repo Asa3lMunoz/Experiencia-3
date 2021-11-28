@@ -1,0 +1,58 @@
+<ion-app>
+  <ion-menu side="start" menuId="first" contentId="main">
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title>Menú</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+        <ion-list>
+          <ion-menu-toggle *ngFor="let c of componentes">
+          <ion-item [routerLink]="c.redirecTo"
+                  detail=true>
+          <ion-icon [name]="c.icon" slot="start" color="primary"></ion-icon>
+          {{ c.name }}
+        </ion-item>
+      </ion-menu-toggle>
+      </ion-list>
+      <ion-list>
+        <ion-menu-toggle>
+          <ion-item routerLink="/inicio">
+            <ion-icon name="home-outline" slot="start" ></ion-icon>
+            <ion-label>Inicio</ion-label>
+         </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item routerLink="/registrarse">
+            <ion-icon name="person-outline" slot="start" ></ion-icon>
+            <ion-label>Registrarse</ion-label>
+         </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item routerLink="/favoritos">
+            <ion-icon name="heart-outline" slot="start" ></ion-icon>
+            <ion-label>Favoritos</ion-label>
+         </ion-item>
+        </ion-menu-toggle>
+       <ion-menu-toggle>
+        <ion-item routerLink="/carrito"> 
+          <ion-icon name="cart-outline" slot="start" ></ion-icon>
+          <ion-label>Carrito</ion-label>
+       </ion-item>
+       </ion-menu-toggle>
+       <ion-menu-toggle>
+        <ion-item routerLink="/configuracion">
+          <ion-icon name="settings-outline" slot="start" ></ion-icon>
+          <ion-label>Configuración</ion-label>
+       </ion-item>
+      </ion-menu-toggle>
+     </ion-list>
+    </ion-content>
+    </ion-menu>
+
+    <ion-router-outlet id="main"></ion-router-outlet>
+
+    
+    
+</ion-app>
